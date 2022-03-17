@@ -1,5 +1,5 @@
 #!/bin/sh
 
-wallpaper=$(curl -s 'https://www.reddit.com/r/wallpapers/' | grep -Eo "https://i.redd.it\/[a-zA-Z0-9?%-]{13}.png" | head -n 1)
+wallpaper=$(curl -A 'random' -s 'https://www.reddit.com/r/wallpapers/.json' | grep -Eo "https://i.redd.it\/[a-zA-Z0-9?%-]{13}.png" | head -n 1)
 wget -O wall.png $wallpaper
-setbg ./wall.png
+xwallpaper --zoom ./wall.png
