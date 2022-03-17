@@ -2,4 +2,5 @@
 
 wallpaper=$(curl -A 'random' -s 'https://www.reddit.com/r/wallpapers/.json' | grep -Eo "https://i.redd.it\/[a-zA-Z0-9?%-]{13}.png" | head -n 1)
 wget -O wall.png $wallpaper
-xwallpaper --zoom ./wall.png
+xwallpaper --zoom wall.png
+wal -i wall.png
